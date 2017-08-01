@@ -5,6 +5,13 @@ RSpec.describe Ruby::Mn do
     expect(Ruby::Mn::VERSION).not_to be nil
   end
 
+  describe ".run" do
+    it do
+      expect(STDOUT).to receive(:puts).with "The next meetup is on 2017-08-28, hope to see you there!"
+      Ruby::Mn.run Date.new 2017, 7, 31
+    end
+  end
+
   describe ".next_meetup" do
     context "when the next meetup is next month" do
       subject { Ruby::Mn.next_meetup(Date.new(2017, 7, 31)) }

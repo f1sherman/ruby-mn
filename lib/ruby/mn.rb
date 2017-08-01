@@ -3,6 +3,10 @@ require 'date'
 
 module Ruby
   module Mn
+    def self.run(current_date = Date.today)
+      puts "The next meetup is on #{next_meetup(current_date)}, hope to see you there!"
+    end
+
     def self.next_meetup(current_date)
       last_monday_of_this_month = last_monday_of_the_month current_date
       return last_monday_of_this_month if last_monday_of_this_month > current_date
