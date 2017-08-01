@@ -6,7 +6,7 @@ RSpec.describe Ruby::Mn do
   end
 
   describe ".next_meetup" do
-    subject { Ruby::Mn.next_meetup }
+    subject { Ruby::Mn.next_meetup(Date.new(2017, 7, 31)) }
     it { is_expected.to eq Date.new 2017, 8, 28 }
   end
 end
