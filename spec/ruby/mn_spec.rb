@@ -5,7 +5,8 @@ RSpec.describe Ruby::Mn do
     expect(Ruby::Mn::VERSION).not_to be nil
   end
 
-  it "does something useful" do
-    expect(false).to eq(true)
+  describe ".next_meetup" do
+    subject { Ruby::Mn.next_meetup }
+    it { is_expected.to eq Date.new 2017, 8, 28 }
   end
 end
