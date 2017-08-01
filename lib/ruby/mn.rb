@@ -12,7 +12,7 @@ module Ruby
 
     def self.last_monday_of_the_month(current_date)
       last_day_of_the_month = Date.new current_date.year, current_date.month, -1
-      difference = last_day_of_the_month.wday - 1 # Monday is weekday #1
+      difference = (last_day_of_the_month.wday - 1) % 7
       Date.new last_day_of_the_month.year, last_day_of_the_month.month, last_day_of_the_month.mday - difference
     end
   end

@@ -14,5 +14,9 @@ RSpec.describe Ruby::Mn do
       subject { Ruby::Mn.next_meetup(Date.new(2017, 8, 1)) }
       it { is_expected.to eq Date.new 2017, 8, 28 }
     end
+    context "when the last day of the month is a Sunday" do
+      subject { Ruby::Mn.next_meetup(Date.new(2017, 4, 1)) }
+      it { is_expected.to eq Date.new 2017, 4, 24 }
+    end
   end
 end
